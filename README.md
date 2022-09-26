@@ -1,12 +1,11 @@
 # 🎬 Subtitle Translation 🎬
 
-This repo contains a tool to translate .str subtitles file from english to spanish:
+This repo contains a tool to translate .str subtitles file from English to Spanish:
     
 ![Sample](https://github.com/Razwand/subtitle_translation/blob/master/images/samples.PNG)
 
 ## Requirements
 - A suitable conda environment named *** can be created and activated with:
-
 
 ## Context
 
