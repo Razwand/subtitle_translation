@@ -16,6 +16,8 @@ The idea is to convert a file containing english subtitles with the structure of
 
 ### About the model
 
+🤗[Translation Model](https://huggingface.co/razwand/opus-mt-en-mul-finetuned_en_sp_translator)
+
 ## How to
 
 
