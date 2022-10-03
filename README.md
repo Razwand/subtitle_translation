@@ -30,6 +30,8 @@ The model used for translation has been trained and host at HugginFace hub:
 🤗[Translation Model](https://huggingface.co/razwand/opus-mt-en-mul-finetuned_en_sp_translator)
 
 ## How to
+⚠️Note:  original .srt **must** be saved as a .txt file.
+
 The following scenario shows how to translate an original file with English subtitles into Spanish.
 
 ```console
