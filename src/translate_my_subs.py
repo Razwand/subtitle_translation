@@ -6,12 +6,14 @@ model = AutoModelForSeq2SeqLM.from_pretrained('mod_translate')
 tokenizer = AutoTokenizer.from_pretrained('mod_translate')
 
 def translate(line):
+    'Using model to translate line'
     text = tokenizer([line],return_tensors="pt")
     output_text = model.generate(text['input_ids'])
     output = tokenizer.decode(output_text.squeeze(), skip_special_tokens=True)
     return(output)
 
 def write_file(old_line,line, file,type):
+    'This function writes the new translated line'
     line = line.replace('Larguin','')
     if type == 't':
         file.write(old_line.replace(old_line,str(line)+"\n"))
@@ -19,6 +21,10 @@ def write_file(old_line,line, file,type):
         file.write(old_line.replace(old_line,str(line)))
 
 def check(line,newf):
+    '''
+    Reads original files and extract the subtitle's text
+    excluding the line of timestamps and the id line        
+    '''
     try: 
         num = int(line)
         write_file(line,line,newf,'o')
@@ -30,6 +36,10 @@ def check(line,newf):
            write_file(line,string_,newf,'t')
 
 def main(file_name):
+    '''
+    This main function reads the original file and calls the rest of the translation flow to
+    write the translated subtitle into the new file with name <file_name>_SP.srt.
+    '''
 
     new_file_name = file_name[:-4] + '_SP.srt'
     with open('./output/' + new_file_name,'w') as new_file:
@@ -46,6 +56,11 @@ def check_args(argv):
         return(True)
 
 if __name__ == "__main__":
+
+    '''
+    This function reads the arguments (file name) and initialize the flow
+    
+    '''
 
     if check_args(sys.argv):
         origin_file = sys.argv[1]
