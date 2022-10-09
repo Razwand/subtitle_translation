@@ -1,4 +1,4 @@
-# 🎬 Subtitle Translation 🎬
+# 🎬 Subtitle Translation 🎬 
 
 This repo contains a tool to translate .str subtitles file from English to Spanish:
     
